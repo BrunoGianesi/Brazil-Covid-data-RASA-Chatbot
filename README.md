@@ -12,14 +12,17 @@ This program sends you Covid-19 data of Brazil, São Paulo, São Carlos and Atib
     ```bash
     choco install make
     ```
+
 3. Now you need to configure your [Telegram](https://telegram.org/) bot.
 
     3.1 Click at this [link](https://telegram.me/BotFather) to open Botfather and send the command "/newbot". Follow it's instructions and you will will be rewarded with a token.
 
     3.2 To config you bot on [Telegram](https://telegram.org/) you need to run the command below and inser the token when expected.
+
     ```bash
     make telegram-config
     ```
+    
 4. To run the apllication, just type the code below while inside the Covid_Data Folder
 
 ## Licence
