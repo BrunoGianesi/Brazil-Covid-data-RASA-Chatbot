@@ -23,7 +23,18 @@ This program sends you Covid-19 data of Brazil, São Paulo, São Carlos and Atib
     make telegram-config
     ```
     
-4. To run the apllication, just type the code below while inside the Covid_Data Folder
+4. To run the apllication go into the virtual enviroment using
+    ```bash
+    start .\venv\Scripts\activate
+    ``` 
+    for Windows and
+    ```bash
+    source venv/Scripts/activate
+    ```
+    for Linux. Then just type the code below while inside the Covid_Data Folder
+    ```bash
+    make send
+    ```
 
 ## Licence
 
