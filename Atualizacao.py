@@ -9,19 +9,19 @@ class GeraInfos():
         return
     def gera():
         url = "https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv"
-        filename = url.split("/")[-1]
+        filename = 'data/' + url.split("/")[-1]
         with open(filename, "wb") as f:
             r = requests.get(url)
             f.write(r.content)
 
         url = "https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/br.csv"
-        filename = url.split("/")[-1]
+        filename = 'data/' +  url.split("/")[-1]
         with open(filename, "wb") as f:
             r = requests.get(url)
             f.write(r.content)
 
         #Dados Brasil
-        df_BR = pd.read_csv('br.csv', delimiter = ';')
+        df_BR = pd.read_csv('data/br.csv', delimiter = ';')
 
         df_BR = pd.DataFrame(df_BR)
         df_BR[['datahora','casos_acum','obitos_acum']]
@@ -47,7 +47,7 @@ class GeraInfos():
         pd.options.display.float_format = '{:g}'.format
 
         #Dados municipios de SP
-        df_mSP = pd.read_csv('dados_covid_sp.csv', delimiter = ';')
+        df_mSP = pd.read_csv('data/dados_covid_sp.csv', delimiter = ';')
         df_mSP = pd.DataFrame(df_mSP)
         df_mSP = df_mSP[['datahora','nome_munic','casos','obitos','casos_novos','obitos_novos']]
 
@@ -98,7 +98,7 @@ class GeraInfos():
         axs[1].plot(df_BR['datahora'], df_BR['media_movel_obitos'], color = "purple") 
         axs[1].set(xlabel='Data', ylabel='No. de óbitos',title = 'Novos óbitos diários no Brasil')
         axs[1].set_xticks([])
-        plt.savefig('Dados_Brasil.jpg', transparent = False)
+        plt.savefig('Graphs/Dados_Brasil.jpg', transparent = False)
 
         fig, axs = plt.subplots(2,figsize = (20, 20))
 
@@ -114,7 +114,7 @@ class GeraInfos():
         axs[1].plot(df_SaoPaulo['datahora'], df_SaoPaulo['media_movel_obitos'], color = "purple") 
         axs[1].set(xlabel='Data', ylabel='No. de óbitos',title = 'Novos óbitos diários na cidade de São Paulo')
         axs[1].set_xticks([])
-        plt.savefig('Dados_Cidade_SP.jpg', transparent = False)
+        plt.savefig('Graphs/Dados_Cidade_SP.jpg', transparent = False)
 
         fig, axs = plt.subplots(2,figsize = (20, 20))
         #Plot Novos Casos cidade São Carlos
@@ -129,7 +129,7 @@ class GeraInfos():
         axs[1].plot(df_SaoCarlos['datahora'], df_SaoCarlos['media_movel_obitos'], color = "purple") 
         axs[1].set(xlabel='Data', ylabel='No. de óbitos',title = 'Novos óbitos diários na cidade de São Carlos')
         axs[1].set_xticks([])
-        plt.savefig('Dados_Sao_Carlos.jpg', transparent = False)
+        plt.savefig('Graphs/Dados_Sao_Carlos.jpg', transparent = False)
 
         fig, axs = plt.subplots(2,figsize = (20, 20))
         #Plot Novos Casos cidade de Atibaia
@@ -145,5 +145,5 @@ class GeraInfos():
         axs[1].set(xlabel='Data', ylabel='No. de óbitos',title = 'Novos óbitos diários na cidade de Atibaia')
         axs[1].set_xticks([])
 
-        plt.savefig('Dados_Atibaia.jpg', transparent = False)
+        plt.savefig('Graphs/Dados_Atibaia.jpg', transparent = False)
 
