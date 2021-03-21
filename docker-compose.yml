@@ -1,0 +1,10 @@
+version: '3'
+services:
+  send:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/app
+    command: python Atualizacao.py
+      

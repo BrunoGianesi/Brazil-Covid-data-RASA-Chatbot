@@ -7,10 +7,13 @@ This program sends you Covid-19 data of Brazil, São Paulo, São Carlos and Atib
 1. First of all, you will need [Python](https://www.python.org) installed.
 2. If you are running on windows, you should get the [Chocolatey](https://chocolatey.org/install).
 
-    2.1 After installing [Chocolatey](https://chocolatey.org/install) you should run de command below to install the Make package.
+    2.1 After installing [Chocolatey](https://chocolatey.org/install) you should run de command below to install the following packages: git, make, docker and docker-compose
 
     ```bash
+    choco install git
     choco install make
+    choco install docker
+    choco install docker-compose
     ```
 
 3. Now you need to configure your [Telegram](https://telegram.org/) bot.
@@ -23,15 +26,7 @@ This program sends you Covid-19 data of Brazil, São Paulo, São Carlos and Atib
     make telegram-config
     ```
     
-4. To run the apllication go into the virtual enviroment using
-    ```bash
-    start .\venv\Scripts\activate
-    ``` 
-    for Windows and
-    ```bash
-    source venv/Scripts/activate
-    ```
-    for Linux. Then just type the code below while inside the Covid_Data Folder
+4. To run the apllication just execute the command bellow
     ```bash
     make send
     ```

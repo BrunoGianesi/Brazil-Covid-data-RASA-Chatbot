@@ -1,8 +1,6 @@
-.PHONY: send
-send: Telegram.py
-	python Telegram.py
-
-.PHONY: telegram-config
-telegram-config: 
-	telegram-send --configure
-	
+.PHONY: start
+start:
+	docker-compose up -d
+.PHONY: end
+end:
+	docker-compose down
