@@ -1,5 +1,5 @@
+rasa
 pandas
-python-telegram-bot
 requests
 numpy
 matplotlib

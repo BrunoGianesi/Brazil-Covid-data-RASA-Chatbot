@@ -1,10 +1,15 @@
-version: '3'
+version: '3.2'
 services:
-  send:
-    build: .
+  rasa:
+    image: rasa/rasa:2.3.4-full
     ports:
-      - "5000:5000"
+      - "5005:5005"
     volumes:
       - ./:/app
-    command: python Atualizacao.py
-      
+    command: run -vv
+  rasa-action-server:
+    build: ./actions
+    volumes:
+      - ./actions:/app/actions
+    expose:
+      - "5055"

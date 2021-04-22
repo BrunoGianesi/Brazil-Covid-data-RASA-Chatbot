@@ -1,0 +1,8 @@
+version: "2.0"
+
+rules:
+
+- rule: Ask for graph
+  steps:
+  - intent: ask_for_data
+  - action: send_graphs

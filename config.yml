@@ -1,0 +1,41 @@
+language: "pt_core_news_sm"
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+    case_sensitive: false
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+    lowercase: true
+    strip_accents: ascii
+  - name: DIETClassifier
+    epochs: 100
+    random_seed: 42
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+    random_seed: 42
+  - name: FallbackClassifier
+    threshold: 0.7
+  - name: ResponseSelector
+    epochs: 100
+    retrieval_intent: chitchat
+    random_seed: 42
+  - name: ResponseSelector
+    epochs: 100
+    retrieval_intent: faq_merchant
+    random_seed: 42
+
+policies:
+  - name: AugmentedMemoizationPolicy
+  - name: TEDPolicy
+    epochs: 100
+    random_seed: 42
+  - name: RulePolicy
+    core_fallback_threshold: 0.8
+    core_fallback_action_name: "action_default_fallback"
+    enable_fallback_prediction: True

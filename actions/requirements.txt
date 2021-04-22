@@ -1,0 +1,8 @@
+aiohttp==3.7.*
+numpy==1.19.*
+python-Levenshtein-wheels==0.13.*
+nltk==3.5.*
+matplotlib
+pandas
+requests
+boto3
