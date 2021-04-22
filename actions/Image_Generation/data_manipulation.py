@@ -3,32 +3,36 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+from fuzzywuzzy import process
+import logging
 
+logger = logging.getLogger(__name__)
 
 # %%
 def filter_dataset(
     Places: list
 ) -> dict:
-# try:
-    full_df = pd.read_csv('actions/Image_Generation/database/Dados.csv', delimiter = ';')
-# except Exception:
-#     print(f"The data file does not exist")
+    try:
+        full_df = pd.read_csv('actions/Image_Generation/database/Dados.csv', delimiter = ';')
+    except Exception:
+        logger.exception("The data file does not exist")
     Places_dict = {}
+    cities_list = list_cities(full_df)
     for place in Places:
+        place = process.extractOne(place, cities_list)
+        place = place[0]
+        correct_places = []
+        correct_places.append(place)
         local_df = full_df.query(f'regiao == "{place}"')
-        for chances in range(3):
+        for chances in range(2):
             if chances == 0:
                 local_df = full_df.query(f'regiao == "{place}"')
             elif local_df.empty and chances == 1:
-                local_df = full_df.query(f'estado == "{place}"')
-            elif local_df.empty and chances == 2:
                 local_df = full_df.query(f'municipio == "{place}"')
                 if local_df.empty:
-                    raise Exception('O Local inserido não foi encontrado')
+                    return False
         Places_dict[place] = local_df
-    
-    return Places_dict
-
+    return Places_dict, correct_places
 
 # %%
 def creating_rolling_mean(
@@ -42,10 +46,13 @@ def creating_rolling_mean(
 def create_graphs(
     dataframes: dict
 ) -> None:
+    #remove remanecent graphs
+    for f in os.listdir('actions/Image_Generation/Graphs'):
+        os.remove(os.path.join('actions/Image_Generation/Graphs', f))
+    logger.info('Generating graphs...')
     for dataframe in dataframes.items():
         local = dataframe[0]
         #normalize local
-        local_norm = local.replace("ã", "a")
         local_norm = local.replace(" ", "_")
         dataframe = dataframe[1]
         #Plot Novos Casos 
@@ -72,5 +79,20 @@ def create_graphs(
 
 
 #%%
+def list_cities(dataframe):
+    full_df = dataframe
+    local_df_regiao = full_df['regiao'].tolist()
+    local_df_municipio = full_df['municipio'].tolist()
+    local_df_regiao = list(dict.fromkeys(local_df_regiao))
+    local_df_municipio = list(dict.fromkeys(local_df_municipio))
+    local_df = []
+    local_df = local_df_regiao + local_df_municipio
 
+    return local_df
+    # with open('nlu-lookup.yml', 'w') as file:
 
+    #     file.write('- lookup: local\n')
+
+    #     file.write('  examples: |\n')
+    #     for listitem in local_df:
+    #         file.write(f'    - Mostrar graficos de [{listitem}](local)\n')

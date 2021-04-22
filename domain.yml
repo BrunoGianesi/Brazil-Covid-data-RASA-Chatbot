@@ -20,7 +20,10 @@ slots:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: |
+      Olá, eu sou o Bot do COVID-19! Facilito a sua vida trazendo informações da situação do vírus em qualquer cidade!
+
+      Basta digitar " Mostrar gráficos de 'nome da cidade' "
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -38,8 +41,8 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-utter_send_info:
-  - text: "https://rasa-project-image-holder.s3-sa-east-1.amazonaws.com/Graphs/Obitos_{place}.jpg"
+  utter_retriving_data: 
+  - text: "Buscando dados..."
 
 actions:
   - send_graphs
@@ -47,3 +50,5 @@ actions:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+

@@ -5,93 +5,242 @@ nlu:
   examples: |
     - Qual a situação de [Atibaia](local) e de [São Carlos](local)?
     - Mostre os graficos de [São Paulo](local)
+    - Graficos de [Brasil](local)
+    - Mostrar graficos de [Brasil](local)
+    - Mostrar graficos de [Norte](local)
+    - Mostrar graficos de [Nordeste](local)
+    - Mostrar graficos de [Sudeste](local)
+    - Mostrar graficos de [Sul](local)
+    - Mostrar graficos de [Centro-Oeste](local)
+    - Mostrar graficos de [nan](local)
+    - Mostrar graficos de [RO](local)
+    - Mostrar graficos de [AC](local)
+    - Mostrar graficos de [AM](local)
+    - Mostrar graficos de [RR](local)
+    - Mostrar graficos de [PA](local)
+    - Mostrar graficos de [AP](local)
+    - Mostrar graficos de [TO](local)
+    - Mostrar graficos de [MA](local)
+    - Mostrar graficos de [PI](local)
+    - Mostrar graficos de [CE](local)
+    - Mostrar graficos de [RN](local)
+    - Mostrar graficos de [PB](local)
+    - Mostrar graficos de [PE](local)
+    - Mostrar graficos de [AL](local)
+    - Mostrar graficos de [SE](local)
+    - Mostrar graficos de [BA](local)
+    - Mostrar graficos de [MG](local)
+    - Mostrar graficos de [ES](local)
+    - Mostrar graficos de [RJ](local)
+    - Mostrar graficos de [SP](local)
+    - Mostrar graficos de [PR](local)
+    - Mostrar graficos de [SC](local)
+    - Mostrar graficos de [RS](local)
+    - Mostrar graficos de [MS](local)
+    - Mostrar graficos de [MT](local)
+    - Mostrar graficos de [GO](local)
+    - Mostrar graficos de [DF](local)
+    - Mostrar graficos de [nan](local)
+    - Mostrar graficos de [Alta Floresta D'Oeste](local)
+    - Mostrar graficos de [Ariquemes](local)
+    - Mostrar graficos de [Cabixi](local)
+    - Mostrar graficos de [Cacoal](local)
+    - Mostrar graficos de [Cerejeiras](local)
+    - Mostrar graficos de [Colorado do Oeste](local)
+    - Mostrar graficos de [Corumbiara](local)
+    - Mostrar graficos de [Costa Marques](local)
+    - Mostrar graficos de [Espigão D'Oeste](local)
+    - Mostrar graficos de [Guajará-Mirim](local)
+    - Mostrar graficos de [Jaru](local)
+    - Mostrar graficos de [Ji-Paraná](local)
+    - Mostrar graficos de [Machadinho D'Oeste](local)
+    - Mostrar graficos de [Nova Brasilândia D'Oeste](local)
+    - Mostrar graficos de [Ouro Preto do Oeste](local)
+    - Mostrar graficos de [Pimenta Bueno](local)
+    - Mostrar graficos de [Porto Velho](local)
+    - Mostrar graficos de [Presidente Médici](local)
+    - Mostrar graficos de [Rio Crespo](local)
+    - Mostrar graficos de [Rolim de Moura](local)
+    - Mostrar graficos de [Santa Luzia D'Oeste](local)
+    - Mostrar graficos de [Vilhena](local)
+    - Mostrar graficos de [São Miguel do Guaporé](local)
+    - Mostrar graficos de [Nova Mamoré](local)
+    - Mostrar graficos de [Alvorada D'Oeste](local)
+    - Mostrar graficos de [Alto Alegre dos Parecis](local)
+    - Mostrar graficos de [Alto Paraíso](local)
+    - Mostrar graficos de [Buritis](local)
+    - Mostrar graficos de [Novo Horizonte do Oeste](local)
+    - Mostrar graficos de [Cacaulândia](local)
+    - Mostrar graficos de [Campo Novo de Rondônia](local)
+    - Mostrar graficos de [Candeias do Jamari](local)
+    - Mostrar graficos de [Castanheiras](local)
+    - Mostrar graficos de [Chupinguaia](local)
+    - Mostrar graficos de [Cujubim](local)
+    - Mostrar graficos de [Governador Jorge Teixeira](local)
+    - Mostrar graficos de [Itapuã do Oeste](local)
+    - Mostrar graficos de [Ministro Andreazza](local)
+    - Mostrar graficos de [Mirante da Serra](local)
+    - Mostrar graficos de [Monte Negro](local)
+    - Mostrar graficos de [Nova União](local)
+    - Mostrar graficos de [Parecis](local)
+    - Mostrar graficos de [Pimenteiras do Oeste](local)
+    - Mostrar graficos de [Primavera de Rondônia](local)
+    - Mostrar graficos de [São Felipe D'Oeste](local)
+    - Mostrar graficos de [São Francisco do Guaporé](local)
+    - Mostrar graficos de [Seringueiras](local)
+    - Mostrar graficos de [Teixeirópolis](local)
+    - Mostrar graficos de [Theobroma](local)
+    - Mostrar graficos de [Urupá](local)
+    - Mostrar graficos de [Vale do Anari](local)
+    - Mostrar graficos de [Vale do Paraíso](local)
+    - Mostrar graficos de [Acrelândia](local)
+    - Mostrar graficos de [Assis Brasil](local)
+    - Mostrar graficos de [Brasiléia](local)
+    - Mostrar graficos de [Bujari](local)
+    - Mostrar graficos de [Capixaba](local)
+    - Mostrar graficos de [Cruzeiro do Sul](local)
+    - Mostrar graficos de [Epitaciolândia](local)
+    - Mostrar graficos de [Feijó](local)
+    - Mostrar graficos de [Jordão](local)
+    - Mostrar graficos de [Mâncio Lima](local)
+    - Mostrar graficos de [Manoel Urbano](local)
+    - Mostrar graficos de [Marechal Thaumaturgo](local)
+    - Mostrar graficos de [Plácido de Castro](local)
+    - Mostrar graficos de [Porto Walter](local)
+    - Mostrar graficos de [Rio Branco](local)
+    - Mostrar graficos de [Rodrigues Alves](local)
+    - Mostrar graficos de [Santa Rosa do Purus](local)
+    - Mostrar graficos de [Senador Guiomard](local)
+    - Mostrar graficos de [Sena Madureira](local)
+    - Mostrar graficos de [Tarauacá](local)
+    - Mostrar graficos de [Xapuri](local)
+    - Mostrar graficos de [Porto Acre](local)
+    - Mostrar graficos de [Alvarães](local)
+    - Mostrar graficos de [Amaturá](local)
+    - Mostrar graficos de [Anamã](local)
+    - Mostrar graficos de [Anori](local)
+    - Mostrar graficos de [Apuí](local)
+    - Mostrar graficos de [Atalaia do Norte](local)
+    - Mostrar graficos de [Autazes](local)
+    - Mostrar graficos de [Barcelos](local)
+    - Mostrar graficos de [Barreirinha](local)
+    - Mostrar graficos de [Benjamin Constant](local)
+    - Mostrar graficos de [Beruri](local)
+    - Mostrar graficos de [Boa Vista do Ramos](local)
+    - Mostrar graficos de [Boca do Acre](local)
+    - Mostrar graficos de [Borba](local)
+    - Mostrar graficos de [Caapiranga](local)
+    - Mostrar graficos de [Canutama](local)
+    - Mostrar graficos de [Carauari](local)
+    - Mostrar graficos de [Careiro](local)
+    - Mostrar graficos de [Careiro da Várzea](local)
+    - Mostrar graficos de [Coari](local)
+    - Mostrar graficos de [Codajás](local)
+    - Mostrar graficos de [Eirunepé](local)
+    - Mostrar graficos de [Envira](local)
+    - Mostrar graficos de [Fonte Boa](local)
+    - Mostrar graficos de [Guajará](local)
+    - Mostrar graficos de [Humaitá](local)
+    - Mostrar graficos de [Ipixuna](local)
+    - Mostrar graficos de [Iranduba](local)
+    - Mostrar graficos de [Itacoatiara](local)
+    - Mostrar graficos de [Itamarati](local)
+    - Mostrar graficos de [Itapiranga](local)
+    - Mostrar graficos de [Japurá](local)
+    - Mostrar graficos de [Juruá](local)
+    - Mostrar graficos de [Jutaí](local)
+    - Mostrar graficos de [Lábrea](local)
+    - Mostrar graficos de [Manacapuru](local)
+    - Mostrar graficos de [Manaquiri](local)
+    - Mostrar graficos de [Manaus](local)
+    - Mostrar graficos de [Manicoré](local)
+    - Mostrar graficos de [Maraã](local)
+    - Mostrar graficos de [Maués](local)
+    - Mostrar graficos de [Nhamundá](local)
+    - Mostrar graficos de [Nova Olinda do Norte](local)
+    - Mostrar graficos de [Novo Airão](local)
+    - Mostrar graficos de [Novo Aripuanã](local)
+    - Mostrar graficos de [Parintins](local)
+    - Mostrar graficos de [Pauini](local)
+    - Mostrar graficos de [Presidente Figueiredo](local)
+    - Mostrar graficos de [Rio Preto da Eva](local)
+    - Mostrar graficos de [Santa Isabel do Rio Negro](local)
+    - Mostrar graficos de [Santo Antônio do Içá](local)
+    - Mostrar graficos de [São Gabriel da Cachoeira](local)
+    - Mostrar graficos de [São Paulo de Olivença](local)
+    - Mostrar graficos de [São Sebastião do Uatumã](local)
+    - Mostrar graficos de [Silves](local)
+    - Mostrar graficos de [Tabatinga](local)
+    - Mostrar graficos de [Tapauá](local)
+    - Mostrar graficos de [Tefé](local)
+    - Mostrar graficos de [Tonantins](local)
+    - Mostrar graficos de [Uarini](local)
+    - Mostrar graficos de [Urucará](local)
+    - Mostrar graficos de [Urucurituba](local)
+    - Mostrar graficos de [Amajari](local)
+    - Mostrar graficos de [Alto Alegre](local)
+    - Mostrar graficos de [Boa Vista](local)
+    - Mostrar graficos de [Bonfim](local)
+    - Mostrar graficos de [Cantá](local)
+    - Mostrar graficos de [Caracaraí](local)
+    - Mostrar graficos de [Caroebe](local)
+    - Mostrar graficos de [Iracema](local)
+    - Mostrar graficos de [Mucajaí](local)
+    - Mostrar graficos de [Normandia](local)
+    - Mostrar graficos de [Pacaraima](local)
+    - Mostrar graficos de [Rorainópolis](local)
+    - Mostrar graficos de [São João da Baliza](local)
+    - Mostrar graficos de [São Luiz](local)
+    - Mostrar graficos de [Uiramutã](local)
+    - Mostrar graficos de [Abaetetuba](local)
+    - Mostrar graficos de [Abel Figueiredo](local)
+    - Mostrar graficos de [Acará](local)
+    - Mostrar graficos de [Afuá](local)
+    - Mostrar graficos de [Água Azul do Norte](local)
+    - Mostrar graficos de [Alenquer](local)
+    - Mostrar graficos de [Almeirim](local)
+    - Mostrar graficos de [Altamira](local)
+    - Mostrar graficos de [Anajás](local)
+    - Mostrar graficos de [Ananindeua](local)
+    - Mostrar graficos de [Anapu](local)
+    - Mostrar graficos de [Augusto Corrêa](local)
+    - Mostrar graficos de [Aurora do Pará](local)
+    - Mostrar graficos de [Aveiro](local)
+    - Mostrar graficos de [Bagre](local)
+    - Mostrar graficos de [Baião](local)
+    - Mostrar graficos de [Bannach](local)
+    - Mostrar graficos de [Barcarena](local)
+    - Mostrar graficos de [Belém](local)
+    - Mostrar graficos de [Belterra](local)
+    - Mostrar graficos de [Benevides](local)
+    - Mostrar graficos de [Bom Jesus do Tocantins](local)
+    - Mostrar graficos de [Bonito](local)
+    - Mostrar graficos de [Bragança](local)
+    - Mostrar graficos de [Brasil Novo](local)
+    - Mostrar graficos de [Brejo Grande do Araguaia](local)
+
+
 
 - intent: greet
   examples: |
-    - hey
-    - hello
+    - oi
+    - olá
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - bom dia
+    - boa noite
+    - boa tarde
+
 
 - intent: goodbye
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - tchau
+    - até mais
+    - adeus
 
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - sim
 
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - nao

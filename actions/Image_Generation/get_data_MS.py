@@ -5,13 +5,19 @@ import os
 import aiohttp
 import asyncio
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 #%%
 def download_data():
     
     
     API = f"https://xx9p7hp1p7.execute-api.us-east-1.amazonaws.com/prod/PortalGeral?X-Parse-Application-Id=unAFkcaNDeXajurGB7LChj8SgQYS2ptm"
-    r = requests.get(API)
+    try:
+        r = requests.get(API)
+    except:
+        logger.exception("Couldn't access the API")
     r = r.json()
     r_json = dict(r)
     url = r_json['results'][0]['arquivo']['url']
@@ -23,8 +29,11 @@ def download_data():
         saved_date = saved_date['saved_date']
     if not os.path.isfile(f'{os.getcwd()}/actions/Image_Generation/database/' + "Dados.csv") or \
          str(date) != str(saved_date):
-        print("Downloading data...")
-        database = requests.get(url)
+        logger.info("Downloading data...")
+        try:
+            database = requests.get(url)
+        except:
+            logger.exception("Couldn't download the data")
         with open(Date_filename, "w") as f:
             dictionary = dict({'saved_date': date})
             json.dump(dictionary, f, indent=1)
@@ -32,5 +41,5 @@ def download_data():
             f.write(database.content)
             print("Minister of Health data downloaded")
     else:
-        print("Data already downloaded")
+        logger.info("Data already downloaded")
     return date

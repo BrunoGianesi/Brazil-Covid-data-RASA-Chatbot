@@ -18,6 +18,9 @@ import requests
 import pandas as pd
 import numpy as np
 
+import logging
+
+logger = logging.getLogger(__name__)
 
 class SendGraphs(Action):
 
@@ -28,17 +31,20 @@ class SendGraphs(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text=f"Buscando dados...")
         places_list = tracker.slots.get('local')
         
         #Get data from Health Ministry database and build Graphs
         date = get_data_MS.download_data()
 
-        dataframes = data_manipulation.filter_dataset(places_list)
+        if data_manipulation.filter_dataset(places_list) is False:
+            dispatcher.utter_message(text="O local desejado não foi encontrado, tente novamente")
+            return []
+
+        dataframes, places_list = data_manipulation.filter_dataset(places_list)
         dataframes = data_manipulation.creating_rolling_mean(dataframes)
         data_manipulation.create_graphs(dataframes)
 
-        #Send Images to AWS
+        # #Send Images to AWS
         image_uploader.upload(secrets_aws.access_key, secrets_aws.secret_access_key)
         dispatcher.utter_message(text= f"Atualizado em: {date}")
         for place in places_list:
@@ -47,9 +53,9 @@ class SendGraphs(Action):
             place_norm = place.replace(" ", "_")
             dispatcher.utter_message(text=f"Dados de: {place}")
             
-            dispatcher.utter_message(text=f"https://rasa-project-image-holder.s3-sa-east-1.amazonaws.com/Graphs/Casos_{place_norm}.jpg")
-            dispatcher.utter_message(text=f"https://rasa-project-image-holder.s3-sa-east-1.amazonaws.com/Graphs/Obitos_{place_norm}.jpg")
+            dispatcher.utter_message(image=f"https://rasa-project-image-holder.s3-sa-east-1.amazonaws.com/Graphs/Casos_{place_norm}.jpg")
+            dispatcher.utter_message(image=f"https://rasa-project-image-holder.s3-sa-east-1.amazonaws.com/Graphs/Obitos_{place_norm}.jpg")
 
-
+        dispatcher.utter_message(text='Para fazer outra busca, é só digitar "Mostrar gráficos de "nome da cidade"')
 
         return []
