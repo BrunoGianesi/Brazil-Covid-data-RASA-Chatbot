@@ -32,6 +32,11 @@ This RASA Chatbot sends you Covid-19 data of Brazil and any of it's cities via [
     ```
     docker-compose up -d
     ```
+7. If you are running locally, you will need a port fowarding program like [ngrok](https://ngrok.com) and, inside the folder which it's installed, run:
+    ```
+    ./ngrok http 5005
+    ```
+    and then get the *https url* showed and replace the *credentials.yml* file
 ## Licence
 
 [MIT](https://choosealicense.com/licenses/mit/)
