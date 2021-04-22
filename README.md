@@ -1,6 +1,6 @@
 # Get Covid-19 info through Telegram!
 
-This RASA Chatbot sends you Covid-19 data of Brazil, São Paulo, São Carlos and Atibaia via [Telegram](https://telegram.org/)
+This RASA Chatbot sends you Covid-19 data of Brazil and any of it's cities via [Telegram](https://telegram.org/)
 
 ## Prerequisites
 
